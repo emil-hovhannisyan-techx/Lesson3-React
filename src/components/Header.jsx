@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { LogOut, Sparkle } from "lucide-react";
+import { LogOut, Sparkles } from "lucide-react";
 import UserContext from "../context/UserContext";
 import "./Header.css";
 
@@ -11,7 +11,7 @@ const Header = () => {
       <div className="header-container">
         <div className="header-left">
           <div className="header-logo">
-            <Sparkle />
+            <Sparkles />
           </div>
           <h1 className="header-title">Personal Dashboard</h1>
         </div>

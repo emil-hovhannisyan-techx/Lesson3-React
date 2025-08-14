@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { UserCircle, Mail, Calendar, Activity, TrendingUp } from "lucide-react";
+import { User, Mail, Calendar, Activity, TrendingUp } from "lucide-react";
 import UserContext from "../context/UserContext";
 import "./Dashboard.css";
 
@@ -42,7 +42,7 @@ const Dashboard = () => {
             <div className="card-header">
               <h3 className="card-title">Profile</h3>
               <div className="card-icon blue">
-                <UserCircle />
+                <User />
               </div>
             </div>
             <p className="card-main-text">{currentUser?.username}</p>

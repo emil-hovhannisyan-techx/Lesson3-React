@@ -17,16 +17,15 @@ const App = () => {
   const handleLogin = (userData) => {
     setCurrentUser(userData);
     setIsLoggedIn(true);
-    saveUserToLocalStorage(userData); // Save immediately on login
+    saveUserToLocalStorage(userData);
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
     setCurrentUser(null);
-    removeUserFromLocalStorage(); // Cleanly remove
+    removeUserFromLocalStorage();
   };
 
-  // Restore user on page load
   useEffect(() => {
     const savedUser = getUserFromLocalStorage();
     if (savedUser) {
@@ -41,7 +40,7 @@ const App = () => {
     >
       <div className="app">
         <Header />
-        <Dashboard />
+        {isLoggedIn ? <Dashboard /> : <LoginForm />}
       </div>
     </UserContext.Provider>
   );
