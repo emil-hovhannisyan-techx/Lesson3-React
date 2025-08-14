@@ -1,19 +1,38 @@
-import React, { useContext, useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { User, Mail } from "lucide-react";
 import UserContext from "../context/UserContext";
 import "./LoginForm.css";
 
 const LoginForm = () => {
-  const { handleLogin } = useContext(UserContext);
+  const { handleLogin, isLoggedIn, currentUser } = useContext(UserContext);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent page reload
+  console.log("LoginForm rendered, isLoggedIn:", isLoggedIn);
+
+  // Auto-redirect when login state changes
+  useEffect(() => {
+    if (isLoggedIn && currentUser?.id) {
+      console.log("Login detected, redirecting to user dashboard...");
+      navigate(`/user/${currentUser.id}`, { replace: true });
+    }
+  }, [isLoggedIn, currentUser, navigate]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Form submitted with:", formData);
+
     if (formData.username.trim()) {
+      console.log("Calling handleLogin...");
       handleLogin({ username: formData.username, email: formData.email });
+      console.log("handleLogin called, setting isSubmitted...");
+      setIsSubmitted(true);
+      // Navigation will be handled by useEffect
     }
   };
 
@@ -34,7 +53,6 @@ const LoginForm = () => {
           </p>
         </div>
 
-        {/* Use form so Enter works */}
         <form className="login-card" onSubmit={handleSubmit}>
           <div className="login-form-group">
             <label htmlFor="text-input" className="form-label">
@@ -50,6 +68,7 @@ const LoginForm = () => {
               placeholder="Enter your username"
               className="form-input"
               autoComplete="username"
+              required
             />
           </div>
 
@@ -71,9 +90,21 @@ const LoginForm = () => {
             />
           </div>
 
-          <button type="submit" className="login-btn">
-            Sign In →
-          </button>
+          {isSubmitted ? (
+            <div className="login-success">
+              <p>Redirecting to dashboard...</p>
+              <Link
+                to={currentUser?.id ? `/user/${currentUser.id}` : "/"}
+                className="login-btn"
+              >
+                Go to Dashboard →
+              </Link>
+            </div>
+          ) : (
+            <button type="submit" className="login-btn">
+              Sign In →
+            </button>
+          )}
         </form>
       </div>
     </div>

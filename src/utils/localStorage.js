@@ -12,3 +12,8 @@ export const getUserFromLocalStorage = () => {
 export const removeUserFromLocalStorage = () => {
   localStorage.removeItem(USER_KEY);
 };
+
+// Generate unique user ID
+export const generateUserId = () => {
+  return Math.random().toString(36).substring(2) + Date.now().toString(36);
+};

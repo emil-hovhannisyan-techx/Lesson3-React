@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { LogOut, Sparkles } from "lucide-react";
 import UserContext from "../context/UserContext";
 import "./Header.css";
@@ -23,10 +24,10 @@ const Header = () => {
                 Welcome back,{" "}
                 <span className="username">{currentUser?.username}</span>
               </span>
-              <button onClick={handleLogout} className="logout-btn">
+              <Link to="/login" onClick={handleLogout} className="logout-btn">
                 <LogOut className="icon" />
                 <span>Logout</span>
-              </button>
+              </Link>
             </>
           ) : (
             <span className="login-prompt">
