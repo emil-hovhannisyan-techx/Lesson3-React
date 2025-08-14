@@ -15,6 +15,7 @@ import {
   generateUserId,
 } from "./utils/localStorage";
 import "./App.css";
+import NotFoundPage from "./components/NotFoundPage";
 
 const ProtectedRoute = ({ children }) => {
   const { isLoggedIn, currentUser } = useContext(UserContext);
@@ -99,7 +100,7 @@ const App = () => {
       },
       {
         path: "*",
-        element: <Navigate to="/login" replace />,
+        element: <NotFoundPage />,
       },
     ],
     // again, why???
