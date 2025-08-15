@@ -1,49 +1,49 @@
 /* NotFound.css - 404 Page Styles */
 
 .not-found-container {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
   align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  justify-content: center;
+  min-height: 100vh;
   overflow: hidden;
   position: relative;
-  color: white;
 }
 
 .particles {
-  position: absolute;
-  width: 100%;
   height: 100%;
   overflow: hidden;
+  position: absolute;
+  width: 100%;
   z-index: 1;
 }
 
 .particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
+  animation: float 8s infinite ease-in-out;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
-  animation: float 8s infinite ease-in-out;
+  height: 4px;
+  position: absolute;
+  width: 4px;
 }
 
 .particle:nth-child(odd) {
-  left: 10%;
   animation-duration: 6s;
+  left: 10%;
 }
 
 .particle:nth-child(even) {
-  left: 80%;
   animation-duration: 10s;
+  left: 80%;
 }
 
 @keyframes float {
   0%,
   100% {
-    transform: translateY(100vh) rotate(0deg);
     opacity: 0;
+    transform: translateY(100vh) rotate(0deg);
   }
   10%,
   90% {
@@ -55,46 +55,46 @@
 }
 
 .content {
-  text-align: center;
-  z-index: 2;
-  position: relative;
   max-width: 800px;
   padding: 2rem;
+  position: relative;
+  text-align: center;
+  z-index: 2;
 }
 
 .glitch-container {
-  position: relative;
-  margin-bottom: 2rem;
   cursor: pointer;
+  margin-bottom: 2rem;
+  position: relative;
 }
 
 .glitch-text {
+  animation: glitch 2s infinite;
+  color: #fff;
   font-size: 8rem;
   font-weight: bold;
-  color: #fff;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  animation: glitch 2s infinite;
   position: relative;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   z-index: 3;
 }
 
 .glitch-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
   font-size: 8rem;
   font-weight: bold;
+  left: 0;
   opacity: 0.8;
+  position: absolute;
+  top: 0;
 }
 
 .glitch-overlay:nth-child(2) {
-  color: #ff0080;
   animation: glitch-1 2s infinite;
+  color: #ff0080;
 }
 
 .glitch-overlay:nth-child(3) {
-  color: #00ff80;
   animation: glitch-2 2s infinite;
+  color: #00ff80;
 }
 
 @keyframes glitch {
@@ -134,48 +134,48 @@
 @keyframes glitch-1 {
   0%,
   100% {
-    transform: translate(0);
     opacity: 0.8;
+    transform: translate(0);
   }
   10% {
-    transform: translate(-3px, 1px);
     opacity: 1;
+    transform: translate(-3px, 1px);
   }
   20% {
-    transform: translate(1px, -3px);
     opacity: 0.8;
+    transform: translate(1px, -3px);
   }
   30% {
-    transform: translate(-1px, -1px);
     opacity: 1;
+    transform: translate(-1px, -1px);
   }
   40% {
-    transform: translate(3px, 1px);
     opacity: 0.8;
+    transform: translate(3px, 1px);
   }
 }
 
 @keyframes glitch-2 {
   0%,
   100% {
-    transform: translate(0);
     opacity: 0.8;
+    transform: translate(0);
   }
   10% {
-    transform: translate(1px, -3px);
     opacity: 1;
+    transform: translate(1px, -3px);
   }
   20% {
-    transform: translate(-3px, 1px);
     opacity: 0.8;
+    transform: translate(-3px, 1px);
   }
   30% {
-    transform: translate(1px, 1px);
     opacity: 1;
+    transform: translate(1px, 1px);
   }
   40% {
-    transform: translate(-1px, -3px);
     opacity: 0.8;
+    transform: translate(-1px, -3px);
   }
 }
 
@@ -185,9 +185,9 @@
 
 .wobble {
   animation: wobble 2s infinite;
-  margin-bottom: 1rem;
-  font-size: 2rem;
   color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 @keyframes wobble {
@@ -205,8 +205,8 @@
 
 .typewriter {
   font-size: 1.2rem;
-  margin-bottom: 1rem;
   line-height: 1.6;
+  margin-bottom: 1rem;
   opacity: 0.9;
 }
 
@@ -218,28 +218,28 @@
 
 .buttons-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
   margin-bottom: 3rem;
-  flex-wrap: wrap;
-  position: relative;
   min-height: 120px;
+  position: relative;
 }
 
 .floating-button {
+  animation: bounce 2s infinite;
   background: linear-gradient(45deg, #ff6b6b, #ee5a52);
   border: none;
-  padding: 1rem 2rem;
   border-radius: 50px;
-  color: white;
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  position: relative;
-  animation: bounce 2s infinite;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
   min-width: 120px;
+  padding: 1rem 2rem;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .floating-button.escaped {
@@ -248,20 +248,20 @@
 }
 
 .floating-button:hover {
-  transform: translateY(-5px) scale(1.1);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px) scale(1.1);
 }
 
 .button-tail {
+  opacity: 0;
   position: absolute;
   right: -10px;
-  opacity: 0;
   transition: all 0.3s;
 }
 
 .floating-button.escaped .button-tail {
-  opacity: 1;
   animation: trail 0.5s ease-out;
+  opacity: 1;
 }
 
 @keyframes bounce {
@@ -307,33 +307,33 @@
 
 @keyframes trail {
   0% {
-    transform: translateX(0) scale(1);
     opacity: 0;
+    transform: translateX(0) scale(1);
   }
   100% {
-    transform: translateX(-20px) scale(0.5);
     opacity: 1;
+    transform: translateX(-20px) scale(0.5);
   }
 }
 
 .fun-facts {
   display: flex;
   flex-direction: column;
+  font-size: 0.9rem;
   gap: 1rem;
   opacity: 0.8;
-  font-size: 0.9rem;
 }
 
 .fun-fact {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   gap: 0.5rem;
+  justify-content: center;
 }
 
 .fact-emoji {
-  font-size: 1.2rem;
   animation: spin 3s linear infinite;
+  font-size: 1.2rem;
 }
 
 @keyframes spin {
@@ -346,36 +346,36 @@
 }
 
 .easter-egg {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  animation: popIn 0.5s ease-out;
   background: rgba(255, 255, 255, 0.95);
-  color: #333;
-  padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  animation: popIn 0.5s ease-out;
+  color: #333;
+  left: 50%;
+  padding: 2rem;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 100;
 }
 
 .easter-egg-content {
   font-size: 1.5rem;
-  text-align: center;
   font-weight: bold;
+  text-align: center;
 }
 
 @keyframes popIn {
   0% {
-    transform: translate(-50%, -50%) scale(0);
     opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
   }
   80% {
     transform: translate(-50%, -50%) scale(1.1);
   }
   100% {
-    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
@@ -396,8 +396,8 @@
   }
 
   .buttons-container {
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
   }
 
   .content {
