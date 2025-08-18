@@ -1,10 +1,35 @@
-import React, { useContext } from "react";
-import { UserCircle, Mail, Calendar, Activity, TrendingUp } from "lucide-react";
+import React, { useContext, useEffect } from "react";
+import { useParams, Navigate } from "react-router-dom";
+import { User, Mail, Calendar, Activity, TrendingUp } from "lucide-react";
 import UserContext from "../context/UserContext";
 import "./Dashboard.css";
 
 const Dashboard = () => {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, isLoggedIn } = useContext(UserContext);
+  const { id } = useParams();
+
+  // WHY???
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Show loading state while user data is being loaded from localStorage
+  if (isLoggedIn && !currentUser) {
+    return (
+      <div className="dashboard-page">
+        <div className="dashboard-container">
+          <div className="welcome-section">
+            <h1 className="welcome-title">Loading...</h1>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Check if user is logged in and the ID matches
+  if (!isLoggedIn || !currentUser || currentUser.id !== id) {
+    return <Navigate to="/login" replace />;
+  }
 
   const getCurrentDate = () => {
     const date = new Date();
@@ -34,6 +59,7 @@ const Dashboard = () => {
             Welcome back, {currentUser?.username}!
           </h1>
           <p className="welcome-date">Today is {getCurrentDate()}</p>
+          <p className="user-id">User ID: {currentUser.id}</p>
           <div className="welcome-divider"></div>
         </div>
 
@@ -42,7 +68,7 @@ const Dashboard = () => {
             <div className="card-header">
               <h3 className="card-title">Profile</h3>
               <div className="card-icon blue">
-                <UserCircle />
+                <User />
               </div>
             </div>
             <p className="card-main-text">{currentUser?.username}</p>

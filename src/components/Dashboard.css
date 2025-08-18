@@ -1,24 +1,24 @@
 .dashboard-page {
+  background: #eff8ff;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
   padding: 32px 0;
 }
 
 .dashboard-container {
-  max-width: 1280px;
   margin: 0 auto;
+  max-width: 1280px;
   padding: 0 16px;
 }
 
 .welcome-section {
-  text-align: center;
   margin-bottom: 32px;
+  text-align: center;
 }
 
 .welcome-title {
+  color: #111827;
   font-size: 36px;
   font-weight: bold;
-  color: #111827;
   margin-bottom: 8px;
 }
 
@@ -28,17 +28,17 @@
 }
 
 .welcome-divider {
-  width: 64px;
-  height: 4px;
-  margin: 0 auto;
   background: linear-gradient(to right, #22d3ee, #3b82f6);
   border-radius: 9999px;
+  height: 4px;
+  margin: 0 auto;
+  width: 64px;
 }
 
 .cards-grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 24px;
+  grid-template-columns: 1fr;
   margin-bottom: 32px;
 }
 
@@ -51,8 +51,8 @@
 .info-card {
   background: white;
   border-radius: 8px;
-  padding: 24px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 24px;
 }
 
 .card-header {
@@ -62,18 +62,18 @@
 }
 
 .card-title {
+  color: #111827;
   font-size: 18px;
   font-weight: 600;
-  color: #111827;
 }
 
 .card-icon {
-  width: 40px;
-  height: 40px;
+  align-items: center;
   border-radius: 8px;
   display: flex;
-  align-items: center;
+  height: 40px;
   justify-content: center;
+  width: 40px;
 }
 
 .card-icon.blue {
@@ -92,15 +92,15 @@
 }
 
 .card-main-text {
+  color: #111827;
   font-size: 20px;
   font-weight: bold;
-  color: #111827;
 }
 
 .card-status {
-  font-size: 14px;
-  display: flex;
   align-items: center;
+  display: flex;
+  font-size: 14px;
   gap: 8px;
 }
 
@@ -115,46 +115,46 @@
 .activity-card {
   background: white;
   border-radius: 8px;
-  padding: 24px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 24px;
 }
 
 .activity-header {
-  display: flex;
   align-items: center;
+  display: flex;
   margin-bottom: 24px;
 }
 
 .activity-icon {
-  width: 40px;
-  height: 40px;
+  align-items: center;
   background-color: #a855f7;
   border-radius: 8px;
   color: white;
   display: flex;
-  align-items: center;
+  height: 40px;
   justify-content: center;
   margin-right: 12px;
+  width: 40px;
 }
 
 .activity-title {
+  color: #111827;
   font-size: 18px;
   font-weight: 600;
-  color: #111827;
 }
 
 .activity-subtitle {
-  font-size: 14px;
   color: #4b5563;
+  font-size: 14px;
 }
 
 .activity-item {
-  padding: 16px;
   border-left: 4px solid;
   border-radius: 8px;
-  margin-bottom: 16px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 16px;
 }
 
 .activity-item.success {
@@ -168,16 +168,16 @@
 }
 
 .activity-left {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 12px;
 }
 
 .activity-dot {
-  width: 8px;
-  height: 8px;
   background-color: currentColor;
   border-radius: 50%;
+  height: 8px;
+  width: 8px;
 }
 
 .activity-item.success .activity-dot {
@@ -189,23 +189,23 @@
 }
 
 .activity-text {
-  font-weight: 500;
   color: #111827;
+  font-weight: 500;
 }
 
 .activity-right {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 8px;
 }
 
 .activity-time {
-  font-size: 14px;
   color: #6b7280;
+  font-size: 14px;
 }
 
 .activity-trend {
-  width: 16px;
-  height: 16px;
   color: #9ca3af;
+  height: 16px;
+  width: 16px;
 }
