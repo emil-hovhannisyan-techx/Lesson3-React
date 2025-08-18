@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { LogOut, Sparkles } from "lucide-react";
 import UserContext from "../context/UserContext";
 import "./Header.css";
 
 const Header = () => {
   const { isLoggedIn, currentUser, handleLogout } = useContext(UserContext);
+  const location = useLocation();
 
   return (
     <header className="header">
@@ -24,6 +25,22 @@ const Header = () => {
                 Welcome back,{" "}
                 <span className="username">{currentUser?.username}</span>
               </span>
+              <Link
+                to={`/user/${currentUser?.id}`}
+                className={`nav-btn ${
+                  location.pathname.startsWith("/user") ? "highlight" : ""
+                }`}
+              >
+                Dashboard
+              </Link>
+              <Link
+                to="/article"
+                className={`nav-btn ${
+                  location.pathname.startsWith("/article") ? "highlight" : ""
+                }`}
+              >
+                Article
+              </Link>
               <Link to="/login" onClick={handleLogout} className="logout-btn">
                 <LogOut className="icon" />
                 <span>Logout</span>

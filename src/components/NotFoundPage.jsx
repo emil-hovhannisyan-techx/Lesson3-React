@@ -87,13 +87,7 @@ const NotFoundPage = () => {
           animationDelay: `${delay}s`,
         }}
         onMouseEnter={() => handleButtonHover(name)}
-        onClick={() => {
-          if (pos.escaped) {
-            alert("Gotcha! 😄");
-          } else if (onClick) {
-            onClick();
-          }
-        }}
+        onClick={onClick}
       >
         {children}
         <span className="button-tail">💨</span>

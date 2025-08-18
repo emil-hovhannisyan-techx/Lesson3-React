@@ -16,6 +16,7 @@ import {
 } from "./utils/localStorage";
 import "./App.css";
 import NotFoundPage from "./components/NotFoundPage";
+import Article from "./components/Articles/Article";
 
 const ProtectedRoute = ({ children }) => {
   const { isLoggedIn, currentUser } = useContext(UserContext);
@@ -95,6 +96,14 @@ const App = () => {
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
+          </div>
+        ),
+      },
+      {
+        path: "/article",
+        element: (
+          <div className="app">
+            <Article />
           </div>
         ),
       },
